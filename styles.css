@@ -766,6 +766,53 @@ body.menu-open { overflow: hidden; }
     font-weight: 500;
 }
 
+/* ===== CERTIFICATS ===== */
+.certificats {
+    padding: 120px 60px;
+    background: var(--light);
+}
+
+.certificats .contacts {
+    max-width: 1100px;
+    margin: 0 auto 48px;
+}
+
+.certificats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.certificat-card {
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.certificat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--green);
+}
+
+.certificat-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.certificat-card h3 {
+    padding: 18px 22px;
+    font-family: 'Almendra', serif;
+    font-size: 1.1rem;
+    color: var(--dark);
+}
+
 /* ===== CONTACT ===== */
 .contact {
     padding: 120px 60px;
@@ -965,7 +1012,9 @@ footer {
 
     .navbar ul li a { font-size: 1.1rem; color: var(--dark); }
 
-    .apropos, .competence, .projet, .contact { padding: 80px 24px; }
+    .apropos, .competence, .certificats, .projet, .contact { padding: 80px 24px; }
+
+    .certificats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
     .AP { flex-direction: column-reverse; gap: 40px; text-align: center; }
     .ap-stats { justify-content: center; }
@@ -986,6 +1035,7 @@ footer {
     .display { gap: 12px; }
     .image { width: 90px; }
     .image img, .ai-icon { width: 60px; height: 60px; }
+    .certificats-grid { grid-template-columns: 1fr; }
 }
 
 /* ===== BOUTON THEME ===== */
@@ -1037,6 +1087,10 @@ footer {
 }
 
 [data-theme="dark"] .projet-card {
+    background: #1a1c20;
+}
+
+[data-theme="dark"] .certificat-card {
     background: #1a1c20;
 }
 
